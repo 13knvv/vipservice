@@ -8,3 +8,7 @@
   line-height: 140%;
   font-family: RobotoRegular, Arial, Helvetica, sans-serif;
 }
+
+.button:disabled {
+  background-color: var(--buttonDisabledBackgroundColor);
+}

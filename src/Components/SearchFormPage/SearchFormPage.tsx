@@ -8,6 +8,7 @@ interface ISearchFormPageProps {
   dateGo: string
   dateBack: string
   handleChangeInput: (inputName: string, value: string) => void
+  isValidate: boolean
 }
 
 const SearchFormPage = (props: ISearchFormPageProps) => {
@@ -29,7 +30,7 @@ const SearchFormPage = (props: ISearchFormPageProps) => {
       </div>
       <div className={s.buttonArea}>
         <Button onClick={onClickFindTickets} 
-                disabled={false} >Найти билеты</Button>
+                disabled={!props.isValidate} >Найти билеты</Button>
       </div>
     </div>
   </>
