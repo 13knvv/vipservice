@@ -1,0 +1,25 @@
+.wrapp {
+  
+}
+
+.searchArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 7.142rem;
+  background-color: var(--searchFormBackgroundColor);
+  border-radius: var(--borderRadiusBlock) var(--borderRadiusBlock) 0 0;
+  padding-left: 2.142rem;
+  padding-right: 2.142rem;
+}
+
+.buttonArea {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 6.142rem;
+  border-radius: 0 0 var(--borderRadiusBlock) var(--borderRadiusBlock);
+  box-shadow: var(--boxShadow);
+  padding-left: 2.142rem;
+  padding-right: 2.142rem;
+}

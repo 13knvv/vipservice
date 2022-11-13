@@ -1,0 +1,10 @@
+.button {
+  padding: 0.893rem 2.527rem;
+  background-color: var(--buttonBackgroundColor);
+  border: none;
+  border-radius: var(--borderRadiusButton);
+  color: var(--buttonTextColor);
+  cursor: pointer;
+  line-height: 140%;
+  font-family: RobotoRegular, Arial, Helvetica, sans-serif;
+}

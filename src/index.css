@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'RobotoRegular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('RobotoRegular'), url('./fonts/RobotoRegular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Robotobold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Robotobold'), url('./fonts/Robotobold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Robotomedium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('RobotoRegular'), url('./fonts/Robotomedium.woff') format('woff');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root { 
+  font-size: 14px;
+  box-sizing: border-box;
+  --bodyBackgroundColor: #ffffff;
+  --searchFormBackgroundColor: #5C87DB;
+  --buttonBackgroundColor: #5C87DB;
+  --buttonClickBackgroundColor: #3E67B7;
+  --buttonDisabledBackgroundColor: #B7BAC1;
+  --buttonTextColor: #ffffff;
+  --searchFormLabelColor: #ffffff;
+  --searchFormTextColor: #5C5C5C;
+  --searchFormPlaceholderColor: #B7BAC1;
+  --boxShadow: 0px 0px 14px rgba(112, 121, 153, 0.3);
+  --borderRadiusBlock: 1.07rem;
+  --borderRadiusButton: 0.714rem;
+  --borderRadiusInput: 0.714rem;
+}
+
+body {
+  background-color: var(--bodyBackgroundColor);
+  font-family: RobotoRegular, Arial, Helvetica, sans-serif;
+}
