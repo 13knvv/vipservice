@@ -1,6 +1,7 @@
 import { makeAutoObservable } from "mobx"
+import urlLogoCompany from '../Components/FlightCardPage/svg/LogoS7Airlines.svg'
 
-interface IFlightInformation {
+export interface IFlightInformation {
   cityFrom: string;
   cityTo: string;
   dateGo: string;
@@ -10,6 +11,10 @@ interface IFlightInformation {
   logoCompany: string,
   price: string,
   time: Array<string> | null
+  timeGoStart: string
+  timeGoFinish: string
+  timeBackStart: string
+  timeBackFinish: string
 }
 
 class FlightCardStore {
@@ -24,16 +29,29 @@ class FlightCardStore {
                                   logoCompany: '',
                                   price: '',
                                   time: null,
+                                  timeGoStart: '',
+                                  timeGoFinish: '',
+                                  timeBackStart: '',
+                                  timeBackFinish: '',
                                 }
+
+  
 
   constructor() {
       makeAutoObservable(this)
   }
 
   setFlightInformation = (info: IFlightInformation) => {
-
+    this.flightInformation = info
   }
-  
+
+  setTimeGoStart = (timeGoStart: string) => {
+    this.flightInformation.timeGoStart = timeGoStart
+  }
+
+  setTimeGoFinish = (timeGoFinish: string) => {
+    this.flightInformation.timeGoFinish = timeGoFinish
+  }
 
   getFlightInformation = async ( cityFrom: string,
                                   cityTo: string,
@@ -51,9 +69,13 @@ class FlightCardStore {
               dateBack,
               type: 'Не возвратный',
               company: 'S7 Airlines',
-              logoCompany: './../logo.svg',
+              logoCompany: urlLogoCompany,
               price: '4150',
-              time: ['09:20 - 11:05', '10:20 - 12:05', '11:20 - 13:05']
+              timeGoStart: '09:20',
+              timeGoFinish: '11:05',
+              timeBackStart: '',
+              timeBackFinish: '',
+              time: ['09:20 - 11:05', '10:20 - 12:05', '11:20 - 13:05'],
             }
           } else {
             return {
@@ -63,9 +85,13 @@ class FlightCardStore {
               dateBack,
               type: 'Не возвратный',
               company: 'S7 Airlines',
-              logoCompany: './../logo.svg',
+              logoCompany: urlLogoCompany,
               price: '9300',
-              time: ['22:57 - 11:05', '22:57 - 11:05']
+              time: null,
+              timeGoStart: '22:57',
+              timeGoFinish: '11:05',
+              timeBackStart: '22:57',
+              timeBackFinish: '11:05',
             }
           }
           

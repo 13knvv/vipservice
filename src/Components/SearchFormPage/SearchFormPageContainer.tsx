@@ -39,7 +39,7 @@ const SearchFormPageContainer = () => {
 
   useEffect( () => {
     validate()
-  }, [cityFrom, cityTo, dateGo])
+  }, [cityFrom, cityTo, dateGo, dateBack])
 
   const handleChangeInput = (inputName: string, value: string) => {
     switch (inputName) {
