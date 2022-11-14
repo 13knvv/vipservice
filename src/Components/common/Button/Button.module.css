@@ -9,6 +9,14 @@
   font-family: RobotoRegular, Arial, Helvetica, sans-serif;
 }
 
+.button:hover {
+  background-color: var(--buttonHoverBackgroundColor);
+}
+
+.button:active {
+  background-color: var(--buttonBackgroundColor);
+}
+
 .button:disabled {
   background-color: var(--buttonDisabledBackgroundColor);
 }

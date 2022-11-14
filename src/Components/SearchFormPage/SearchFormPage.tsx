@@ -7,13 +7,15 @@ interface ISearchFormPageProps {
   cityTo: string
   dateGo: string
   dateBack: string
+  handleClickFindTickets: () => void
   handleChangeInput: (inputName: string, value: string) => void
   isValidate: boolean
 }
 
 const SearchFormPage = (props: ISearchFormPageProps) => {
+
   const onClickFindTickets = () => {
-    alert('button')
+    props.handleClickFindTickets()
   }
   
   const onChangeInput = (e:  React.ChangeEvent<HTMLInputElement>) => {
@@ -21,12 +23,17 @@ const SearchFormPage = (props: ISearchFormPageProps) => {
   }
 
   return <>
-    <div className={s.wrapp}>
+    <div>
       <div className={s.searchArea}>
-        <Input type="text" name="cityFrom" placeholder="Город вылета" value={props.cityFrom} label="Откуда" onChange={onChangeInput} />
-        <Input type="text" name="cityTo" placeholder="Город прилёта" value={props.cityTo}  label="Куда" onChange={onChangeInput} />
-        <Input type="date" name="dateGo" min="2022-01-01" value={props.dateGo}  label="Туда" onChange={onChangeInput} />
-        <Input type="date" name="dateBack" min="2022-01-01" value={props.dateBack}  label="Обратно" onChange={onChangeInput} />
+        <div className={s.cityGroup}>
+          <Input type="text" name="cityFrom" placeholder="Город вылета" value={props.cityFrom} label="Откуда" onChange={onChangeInput} />
+          <Input type="text" name="cityTo" placeholder="Город прилёта" value={props.cityTo}  label="Куда" onChange={onChangeInput} />
+        </div>
+        <div className={s.dateGroup}>
+          <Input type="date" name="dateGo" min="2022-01-01" value={props.dateGo}  label="Туда" onChange={onChangeInput} />
+          <div className={s.line}></div>
+          <Input type="date" name="dateBack" min="2022-01-01" value={props.dateBack}  label="Обратно" onChange={onChangeInput} />
+        </div>
       </div>
       <div className={s.buttonArea}>
         <Button onClick={onClickFindTickets} 

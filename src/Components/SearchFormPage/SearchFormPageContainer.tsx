@@ -1,30 +1,33 @@
-import { useEffect, useState } from 'react'
+import { observer } from 'mobx-react-lite'
+import { useEffect } from 'react'
+import { useStores } from '../../MobX/stores'
 import SearchFormPage from './SearchFormPage'
 
 const SearchFormPageContainer = () => {
-const [ cityFrom, setCityFrom] = useState<string>('')
-const [ cityTo, setCityTo] = useState<string>('')
-const [ dateGo, setDateGo] = useState<string>('')
-const [ dateBack, setDateBack] = useState<string>('')
-const [ isValidate, setIsValidate] = useState<boolean>(false)
+const searchFormStore = useStores().searchFormStore
+const cityFrom = searchFormStore.cityFrom
+const cityTo = searchFormStore.cityTo
+const dateGo = searchFormStore.dateGo
+const dateBack = searchFormStore.dateBack
+const isValidate = searchFormStore.isValidate
 
 const validate = () => {
-  setIsValidate(true)
+  searchFormStore.setIsValidate(true)
 
   if (!cityFrom) {
-    setIsValidate(false)
+    searchFormStore.setIsValidate(false)
   }
   if (cityFrom && !(/^[a-zA-Zа-яА-Я]+$/.test(cityFrom)) ) {
-    setIsValidate(false)
+    searchFormStore.setIsValidate(false)
   }
   if (!cityTo) {
-    setIsValidate(false)
+    searchFormStore.setIsValidate(false)
   }
   if (cityTo && !(/^[a-zA-Zа-яА-Я -]+$/.test(cityTo)) ) {
-    setIsValidate(false)
+    searchFormStore.setIsValidate(false)
   }
   if (!dateGo) {
-    setIsValidate(false)
+    searchFormStore.setIsValidate(false)
   }
 }
 
@@ -35,29 +38,31 @@ useEffect( () => {
 const handleChangeInput = (inputName: string, value: string) => {
   switch (inputName) {
     case 'cityFrom':
-      setCityFrom(value)
+      searchFormStore.setCityFrom(value)
       break
     case 'cityTo':
-      setCityTo(value)
+      searchFormStore.setCityTo(value)
       break
     case 'dateGo':
-      setDateGo(value)
+      searchFormStore.setDateGo(value)
       break
     case 'dateBack':
-      setDateBack(value)
+      searchFormStore.setDateBack(value)
       break
   }
-  
-  
+}
 
+const handleClickFindTickets = () => {
+  
 }
 
   return <SearchFormPage  cityFrom={cityFrom} 
                           cityTo={cityTo}
                           dateGo={dateGo}
                           dateBack={dateBack}
+                          handleClickFindTickets={handleClickFindTickets}
                           handleChangeInput={handleChangeInput}
                           isValidate={isValidate} />
 }
 
-export default SearchFormPageContainer
+export default observer(SearchFormPageContainer)

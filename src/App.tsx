@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import s from './App.module.css'
 import FlightCardPageContainer from './Components/FlightCardPage/FlightCardPageContainer';
 import SearchFormPageContainer from './Components/SearchFormPage/SearchFormPageContainer';
 
-function App() {
+const App = () => {
+  
   return (
     <div className={s.container}>
       <Routes>

@@ -1,7 +1,3 @@
-.wrapp {
-  
-}
-
 .searchArea {
   display: flex;
   justify-content: space-between;
@@ -22,4 +18,17 @@
   box-shadow: var(--boxShadow);
   padding-left: 2.142rem;
   padding-right: 2.142rem;
+}
+
+.cityGroup, .dateGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(50% - 0.857rem);
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed  white;
 }
