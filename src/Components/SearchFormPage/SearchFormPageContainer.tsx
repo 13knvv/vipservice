@@ -7,7 +7,6 @@ import SearchFormPage from './SearchFormPage'
 const SearchFormPageContainer = () => {
   const navigate = useNavigate();
   const searchFormStore = useStores().searchFormStore
-  const flightCardStore = useStores().flightCardStore
   const cityFrom = searchFormStore.cityFrom
   const cityTo = searchFormStore.cityTo
   const dateGo = searchFormStore.dateGo

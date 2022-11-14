@@ -75,7 +75,7 @@ class FlightCardStore {
               timeGoFinish: '11:05',
               timeBackStart: '',
               timeBackFinish: '',
-              time: ['09:20 - 11:05', '10:20 - 12:05', '11:20 - 13:05'],
+              time: ['09:20 - 11:05', '10:20 - 12:00', '11:30 - 13:00'],
             }
           } else {
             return {
@@ -88,10 +88,10 @@ class FlightCardStore {
               logoCompany: urlLogoCompany,
               price: '9300',
               time: null,
-              timeGoStart: '22:57',
-              timeGoFinish: '11:05',
-              timeBackStart: '22:57',
-              timeBackFinish: '11:05',
+              timeGoStart: '11:05',
+              timeGoFinish: '22:57',
+              timeBackStart: '11:57',
+              timeBackFinish: '20:05',
             }
           }
           
