@@ -1,12 +1,15 @@
 import { createContext, useContext } from "react"
-import SearchFormStore from "./searchForm"
+import FlightCardStore from "./flightCardStore"
+import SearchFormStore from "./searchFormStore"
 
 class RootStore {
 
   searchFormStore: SearchFormStore
+  flightCardStore: FlightCardStore
 
   constructor() {
     this.searchFormStore  = new SearchFormStore
+    this.flightCardStore  = new FlightCardStore
   }
 }
 
