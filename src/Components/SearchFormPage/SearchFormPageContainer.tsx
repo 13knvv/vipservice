@@ -29,6 +29,9 @@ const validate = () => {
   if (!dateGo) {
     searchFormStore.setIsValidate(false)
   }
+  if (dateBack && dateBack < dateGo) {
+    searchFormStore.setIsValidate(false)
+  }
 }
 
 useEffect( () => {

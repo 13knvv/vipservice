@@ -4,6 +4,7 @@ interface IInputProps {
   type: string
   placeholder?: string
   min?: string
+  max?: string
   value: string
   label: string
   name: string

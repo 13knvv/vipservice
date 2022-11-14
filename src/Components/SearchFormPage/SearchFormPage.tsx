@@ -26,13 +26,34 @@ const SearchFormPage = (props: ISearchFormPageProps) => {
     <div>
       <div className={s.searchArea}>
         <div className={s.cityGroup}>
-          <Input type="text" name="cityFrom" placeholder="Город вылета" value={props.cityFrom} label="Откуда" onChange={onChangeInput} />
-          <Input type="text" name="cityTo" placeholder="Город прилёта" value={props.cityTo}  label="Куда" onChange={onChangeInput} />
+          <Input  type="text" 
+                  name="cityFrom"
+                  placeholder="Город вылета"
+                  value={props.cityFrom}
+                  label="Откуда"
+                  onChange={onChangeInput} />
+          <Input  type="text"
+                  name="cityTo"
+                  placeholder="Город прилёта"
+                  value={props.cityTo}
+                  label="Куда"
+                  onChange={onChangeInput} />
         </div>
         <div className={s.dateGroup}>
-          <Input type="date" name="dateGo" min="2022-01-01" value={props.dateGo}  label="Туда" onChange={onChangeInput} />
+          <Input  type="date" 
+                  name="dateGo"
+                  min={new Date().toISOString().split("T")[0]} value={props.dateGo}
+                  max={new Date(new Date().getFullYear() + 2 + '').toISOString().split("T")[0]}
+                  label="Туда"
+                  onChange={onChangeInput} />
           <div className={s.line}></div>
-          <Input type="date" name="dateBack" min="2022-01-01" value={props.dateBack}  label="Обратно" onChange={onChangeInput} />
+          <Input  type="date"
+                  name="dateBack"
+                  min={props.dateGo || new Date().toISOString().split("T")[0]}
+                  max={new Date(new Date().getFullYear() + 2 + '').toISOString().split("T")[0]}
+                  value={props.dateBack}
+                  label="Обратно"
+                  onChange={onChangeInput} />
         </div>
       </div>
       <div className={s.buttonArea}>
